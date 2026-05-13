@@ -1,0 +1,60 @@
+
+.block-reg{
+    padding: 30px;
+    box-shadow: 4px 4px 8px 12px rgba(34, 60, 80, 0.2);
+    width: 400px;
+    margin: 100px auto;
+    border-radius: 12px;
+    
+}
+
+.block-input{
+    position: relative;
+    margin-top: 20px;
+}
+
+input{
+    width: 100%;
+    height: 40px;
+    border-radius: 14px;
+    border: 1px solid #0000001A;
+    outline: none;
+    align-items: center;
+    font-size: 10px;
+}
+
+label{
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    pointer-events: none;
+    padding-left: 30px;
+    transition: 500ms;
+}
+
+input:focus + label, input:valid + label{
+    top: 2px;
+    font-size:12px;
+    color: hsla(0, 85%, 63%, 1);
+}
+
+
+.reg-btn{
+    width: 100%;
+    margin-top: 20px;
+    height: 30px;
+    border: none;
+    background-color: hsla(0, 85%, 63%, 1);
+    color: #fff;
+    font-size:14px;
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+
+.error-text{
+    color: red;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 10px;
+}
