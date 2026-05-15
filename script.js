@@ -15,7 +15,7 @@ const render = async() =>{
         card_sneakers.classList.add('card-sneakers');
 
         card_sneakers.innerHTML = `
-        <img src="/img/sneakers.png">
+        <img src="./img/sneakers.png">
         <p class="text-sneakers">${el.title}</p>
         <p class="price-sneakers">${el.price}</p>
 
