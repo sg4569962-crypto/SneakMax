@@ -9,19 +9,33 @@
 
 
 .header {
-    display: flex;
+    /* display: flex; */
     
     background-color: hsla(246, 33%, 39%, 1);
-    height: 528px;
-    flex-direction: column;
+    /* height: 528px; */
+    /* flex-direction: column; */
+    padding: 20px 0;
     
-    padding: 0px 370px;
+    /* padding: 0px 370px; */
 }
+
+.container{
+    max-width: 1300px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    /* overflow: hidden; */
+
+}
+
+
 
 .header_wrapp{
     display: flex;
     align-items: center;
     justify-content: space-around;
+    
+    
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
@@ -64,14 +78,24 @@
 
 
 .section1{
+
+
     margin-top: 100px;
+
+    
 }
 
 
 .bg-image{
     position: absolute;
-    top: 25vh;
-    left: 30vw;
+    /* top: 25vh;
+    left: 30vw; */
+    width: 60vw;
+    height: 20vh;
+    transform: translateX(30%) translateY(50%);
+
+
+
 }
 
 .item-list {
@@ -138,7 +162,7 @@
     display: flex;
     justify-content: center;
     align-items: start;
-    padding: 60px 270px;
+    padding: 60px 0px;
 
 }
 
@@ -317,6 +341,7 @@
 .about-us{
     background-color: hsla(246, 33%, 39%, 1);
     display: flex;
+
 }
 .right-block-about{
   clip-path: polygon(20% 0, 100% 0, 80% 100%, 0% 100%);
@@ -332,35 +357,38 @@
     font-weight: 700;
     font-size: 30px;
     margin-bottom: 20px;
-    margin-left: 374px;
+    text-align: center;
+
 }
 .text-about{
     font-weight: 400;
     font-size: 16px;
     color: hsla(0, 0%, 100%, 1);
-    margin-left: 374px;
+    /* margin-left: 374px; */
+    text-align: center;
+
  
 }
 .img-cite{
     width: 147px;
     height: 20px;
     margin-top: 20px;
-    margin-left: 670px;
+    /* margin-left: 670px; */
     margin-right: 53px;
 }
 .figure-about{
-    width: 550px;
-    height: 424px;
+    /* width: 550px;
+    height: 424px; */
     position: absolute;
+    pointer-events: none;
 }
 
     
 .sneakers-catalog{
-width: 1180px;
-height: 658px;
+/* width: 1180px;
+height: 658px; */
 background-color: hsla(21, 100%, 97%, 1);
-margin-left: 370px;
-margin-right: 370px;
+
 margin-bottom: 60px;
 margin-top: 60px;
 }
@@ -381,7 +409,7 @@ margin-top: 60px;
 }
 .line{
     width: 980px;
-    height: 0px;
+    height: 1px;
     color: hsla(0, 0%, 50%, 1);
     border: 1px solid;
     margin-left: 100px;
@@ -443,7 +471,7 @@ border: 1px solid hsla(219, 13%, 31%, 1)
     background-color: hsla(246, 33%, 39%, 1);
     /* width: 1,920px; */
     /* height: 1,190px; */
-    padding: 60px 370px;
+    padding: 60px 40px;
     /* margin-top: 60px; */
     position: relative;
 
@@ -570,7 +598,7 @@ border: 1px solid hsla(219, 13%, 31%, 1)
   height: 618px;
   margin-top: 60px;
   display: flex;
-  padding-left: 370px;
+
   padding-top: 60px;
 }
 .title-contacts{
@@ -615,10 +643,10 @@ border: 1px solid hsla(219, 13%, 31%, 1)
     margin-top: 9px;
     margin-right: 138px;
 }
-.contacts__map{
+/* .contacts__map{
     width: 680px;
     height: 497px;
-}  
+}   */
 .img-logo{
     margin-top: 39px;
 }
