@@ -1,5 +1,8 @@
 const cards = document.querySelector(".cards");
-const btn = document.querySelector(".btn-sneakers")
+const btn = document.querySelector(".btn-sneakers");
+const logout = document.querySelector(".btn-logout")
+
+const log_container = document.querySelector(".log-container ")
 let count = 2;
 const render = async() =>{
     const req = await fetch("https://5e6b53ef5266adea.mokky.dev/card");
@@ -34,3 +37,23 @@ btn.addEventListener("click", () =>{
 
 
 render()
+
+
+logout.addEventListener("click", () =>{
+    localStorage.removeItem("userId");
+    window.location.reload();
+    
+})
+
+const userId = localStorage.getItem("userId");
+
+const checkAuth = () =>{
+    if(userId){
+        log_container.classList.add("auth")
+    }else{
+        log_container.classList.remove("auth")
+    }
+
+}
+
+checkAuth()

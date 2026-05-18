@@ -21,8 +21,8 @@ reg_btn.addEventListener("click", async() =>{
         return;
     }
 
-    alert("Вы вошли ")
+    localStorage.setItem("userId", exists.id)
 
-    window.location.reload()
+    window.location.href = "../index.html"
 
 })

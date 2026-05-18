@@ -5,6 +5,7 @@ const reg_btn = document.querySelector(".reg-btn");
 const error_text = document.querySelector(".error-text");
 
 
+
 reg_btn.addEventListener("click", async() =>{
     if(!input_login.value || !input_pass.value || !input_pass2.value){
         error_text.textContent = "Заполните данные";
@@ -40,6 +41,6 @@ reg_btn.addEventListener("click", async() =>{
     })
 
     
-    window.location.reload()
+    window.location.href = "../index.html"
 
 })
