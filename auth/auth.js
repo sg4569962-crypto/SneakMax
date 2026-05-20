@@ -14,7 +14,7 @@ reg_btn.addEventListener("click", async() =>{
     const req = await fetch("https://4b72fc9e8b48d19a.mokky.dev/users2");
     const users = await req.json();
 
-    const exists = users.find(us => us.login === input_login.value && us.pass ===input_pass.value );
+    const exists = users.find(us => us.login === input_login.value && us.pass === input_pass.value );
 
     if(!exists){
         error_text.textContent = "Логин или пароль не верны";

@@ -14,7 +14,7 @@ let count = 2;
 const render = async() =>{
     const req = await fetch("https://5e6b53ef5266adea.mokky.dev/card");
     const items = await req.json();
-    console.log(items);
+    // console.log(items);
 
     cards.textContent = '';
 
@@ -67,5 +67,4 @@ if(userId){
 
 
 
-checkAuth()
 
