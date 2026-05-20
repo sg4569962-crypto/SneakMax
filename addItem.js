@@ -1,5 +1,5 @@
-const addItem = (id) =>{
-    console.log(id)
+const addItem = (el) =>{
+    console.log(el)
 }
 
 export default addItem
