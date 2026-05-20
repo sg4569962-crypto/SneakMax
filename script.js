@@ -1,3 +1,7 @@
+import addItem from "./addItem.js";
+
+
+
 const cards = document.querySelector(".cards");
 const btn = document.querySelector(".btn-sneakers");
 const logout = document.querySelector(".btn-logout")
@@ -21,8 +25,12 @@ const render = async() =>{
         <img src="./img/sneakers.png">
         <p class="text-sneakers">${el.title}</p>
         <p class="price-sneakers">${el.price}</p>
+        <button class="add-btn">Добавить</button>
 
-        `
+        `;
+        card_sneakers.querySelector(".add-btn").addEventListener("click", () =>{
+            addItem(el)
+        })
 
         cards.appendChild(card_sneakers);
 
