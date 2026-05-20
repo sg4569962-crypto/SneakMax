@@ -1,3 +1,4 @@
+
 const cards = document.querySelector(".cards");
 const btn = document.querySelector(".btn-sneakers");
 const logout = document.querySelector(".btn-logout")
@@ -22,7 +23,10 @@ const render = async() =>{
         <p class="text-sneakers">${el.title}</p>
         <p class="price-sneakers">${el.price}</p>
 
-        `
+        `;
+        card_sneakers.querySelector(".add-btn").addEventListener("click", () =>{
+            addItem(el.id)
+        })
 
         cards.appendChild(card_sneakers);
 
@@ -44,16 +48,15 @@ logout.addEventListener("click", () =>{
     window.location.reload();
     
 })
-
 const userId = localStorage.getItem("userId");
-
-const checkAuth = () =>{
-    if(userId){
-        log_container.classList.add("auth")
-    }else{
-        log_container.classList.remove("auth")
-    }
-
+if(userId){
+    log_container.classList.add("auth")
+}else{
+    log_container.classList.remove("auth")
 }
 
+
+
+
 checkAuth()
+
