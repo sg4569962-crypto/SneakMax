@@ -1,6 +1,12 @@
 const modal = document.querySelector(".modal");
-const btn_modal = document.querySelector(".btn-modal");
-
-btn_modal.addEventListener("click", () => {
+const shadow = document.querySelector(".shadow")
+const btn_basket = document.querySelector(".basket")
+btn_basket.addEventListener("click", () => {
   modal.classList.add("active");
 });
+
+
+shadow.addEventListener("click", () =>{
+  modal.classList.remove("active");
+
+})

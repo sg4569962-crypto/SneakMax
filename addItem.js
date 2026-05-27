@@ -1,5 +1,9 @@
+import render_count from "./basket.js";
 
 const not = document.querySelector(".not")
+
+
+
 
 const addItem = async(el) =>{
     // console.log(el);
@@ -38,7 +42,7 @@ const addItem = async(el) =>{
         return
     }
 
-
+    render_count()
 
 
     not.classList.add("active");
@@ -53,5 +57,8 @@ const addItem = async(el) =>{
 
 
 }
+
+
+
 
 export default addItem
