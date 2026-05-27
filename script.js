@@ -7,10 +7,13 @@ import addItem from "./addItem.js";
 
 const cards = document.querySelector(".cards");
 const btn = document.querySelector(".btn-sneakers");
-const logout = document.querySelector(".btn-logout")
+const logout = document.querySelector(".btn-logout");
+const basket = document.querySelector(".count-basket");
+
 
 const log_container = document.querySelector(".log-container ")
 let count = 2;
+
 const render = async() =>{
     const req = await fetch("https://5e6b53ef5266adea.mokky.dev/card");
     const items = await req.json();
