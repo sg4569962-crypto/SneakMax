@@ -1,6 +1,9 @@
+import deleteItem from "./delete.js";
+
 const count_basket = document.querySelector(".count-basket");
 const container_basket = document.querySelector(".container-card");
-const no_card = document.querySelector(".no-card")
+const no_card = document.querySelector(".no-card");
+const total_price = document.querySelector(".total-price");
 
 const render_count = async() =>{
     const userId = localStorage.getItem("userId");
@@ -18,7 +21,8 @@ const render_count = async() =>{
         no_card.classList.add('active');
         return; 
     }
-
+const totalSum = user.basket.reduce((sum,item) => sum + item.price, 0);
+total_price.textContent = totalSum
     user.basket.forEach(el => {
 
         const card = document.createElement("div");
@@ -37,7 +41,7 @@ const render_count = async() =>{
                 width="20"
                 height="20"
                 fill="currentColor"
-                class="bi-basket2"
+                class="btn-delete"
                 viewBox="0 0 16 16"
               >
                 <path
@@ -49,6 +53,11 @@ const render_count = async() =>{
               </svg>
         
         `
+card.querySelector(".btn-delete").addEventListener("click", () =>{
+  deleteItem(el.id);
+})
+
+
         container_basket.appendChild(card);
         
     });

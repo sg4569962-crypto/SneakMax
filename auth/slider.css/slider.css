@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+  }
+
+  body{
+    display: flex;
+    justify-content: center;
+  }
+  .slider{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    align-items: center;
+  }
+  .slider-card{
+    opacity: 0;
+  }
+  .slider-card.active{
+    opacity: 1;
+  }
