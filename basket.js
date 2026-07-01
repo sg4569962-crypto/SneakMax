@@ -5,31 +5,40 @@ const container_basket = document.querySelector(".container-card");
 const no_card = document.querySelector(".no-card");
 const total_price = document.querySelector(".total-price");
 
-const render_count = async() =>{
-    const userId = localStorage.getItem("userId");
+const render_count = async () => {
+  container_basket.textContent = ''
+  const userId = localStorage.getItem("userId");
 
-    if(!userId){
-        return
-    }
+  if (!userId) {
+    return
+  }
 
-    const req = await fetch(`https://4b72fc9e8b48d19a.mokky.dev/users2/${userId}`);
+  const req = await fetch(`https://4b72fc9e8b48d19a.mokky.dev/users2/${userId}`);
 
-    const user = await req.json();
-    count_basket.textContent = user.basket.length
+  const user = await req.json();
+  count_basket.textContent = user.basket.length
 
-    if(user.basket.length < 1){
-        no_card.classList.add('active');
-        return; 
-    }
-const totalSum = user.basket.reduce((sum,item) => sum + item.price, 0);
-total_price.textContent = totalSum
-    user.basket.forEach(el => {
+  if (user.basket.length === 0) {
+    no_card.classList.add('active');
+    const totalSum = user.basket.reduce((sum, item) => sum + item.price, 0);
+    total_price.textContent = totalSum
+    container_basket.textContent = ''
+    return;
 
-        const card = document.createElement("div");
+  }
 
-        card.classList.add('card-modal')
+  no_card.classList.remove('active');
 
-        card.innerHTML = `
+  
+  const totalSum = user.basket.reduce((sum, item) => sum + item.price, 0);
+  total_price.textContent = totalSum
+  user.basket.forEach(el => {
+
+    const card = document.createElement("div");
+
+    card.classList.add('card-modal')
+
+    card.innerHTML = `
         <img src="./img/sneakers.png" alt="" class="img-modal" />
               <div>
                 <p class="title-modal">${el.title}</p>
@@ -53,17 +62,17 @@ total_price.textContent = totalSum
               </svg>
         
         `
-card.querySelector(".btn-delete").addEventListener("click", () =>{
-  deleteItem(el.id);
-})
+    card.querySelector(".btn-delete").addEventListener("click", () => {
+      deleteItem(el.id);
+    })
 
 
-        container_basket.appendChild(card);
-        
-    });
+    container_basket.appendChild(card);
+
+  });
 
 
-    console.log(user.basket)
+  console.log(user.basket)
 
 }
 

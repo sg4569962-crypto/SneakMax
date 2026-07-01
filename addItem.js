@@ -6,7 +6,7 @@ const not = document.querySelector(".not")
 
 
 const addItem = async(el) =>{
-    // console.log(el);
+    console.log(el);
     const id = localStorage.getItem("userId");
 
 
@@ -24,7 +24,7 @@ const addItem = async(el) =>{
 
     const updateBasket = [...user.basket, el];
 
-    // console.log(updateBasket);
+    
 
 
     const add = await fetch(`https://4b72fc9e8b48d19a.mokky.dev/users2/${id}`,{
@@ -36,6 +36,8 @@ const addItem = async(el) =>{
             basket:updateBasket
         })
     });
+
+    console.log(add);
 
     if(!add.ok){
         alert("Произошла ошибка");

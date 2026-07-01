@@ -91,8 +91,8 @@
                 <p class="filter-text">Цена, руб</p>
                 <table class="price-table">
                   <tr>
-                    <td class="td1">1850</td>
-                    <td class="td2">40 778</td>
+                    <td class="td1">0</td>
+                    <td class="td2">30000</td>
                   </tr>
                 </table>
                 <input
@@ -100,7 +100,7 @@
                   type="range"
                   min="0"
                   max="30000"
-                  value="1850"
+                  value="15000"
                 />
               </div>
 
@@ -125,18 +125,18 @@
                 <p class="sizes-text">Размер</p>
                 <table class="table-sizes">
                   <tr>
-                    <td class="size-item">35</td>
-                    <td class="size-item">36</td>
-                    <td class="size-item">37</td>
+                    <td class="size-item" data-size="35">35</td>
+                    <td class="size-item" data-size="36">36</td>
+                    <td class="size-item" data-size="37">37</td>
                   </tr>
                   <tr>
-                    <td class="size-item">38</td>
-                    <td class="size-item">39</td>
-                    <td class="size-item">40</td>
+                    <td class="size-item" data-size="38">38</td>
+                    <td class="size-item" data-size="39">39</td>
+                    <td class="size-item" data-size="40">40</td>
                   </tr>
-                  <td class="size-item">41</td>
-                  <td class="size-item">42</td>
-                  <td class="size-item">43</td>
+                  <td class="size-item" data-size="41">41</td>
+                  <td class="size-item" data-size="42">42</td>
+                  <td class="size-item" data-size="43">43</td>
                   <tr></tr>
                 </table>
 
@@ -378,10 +378,11 @@
         <div class="shadow"></div>
 
         <div class="content">
+            <h1 class="no-card">У вас пустая корзина</h1>
           <div class="container-card">
            
 
-            <h1 class="no-card">У вас пустая корзина</h1>
+          
 
            
           </div>
@@ -389,7 +390,7 @@
           <div class="footer-modal">
             <div class="total">
               <div class="total-text">Итого:</div>
-              <div class="total-price"></div>
+              <div class="total-price">0</div>
             </div>
 
             <button class="block-modal-btn">Перейти в корзину</button>
@@ -406,5 +407,6 @@
     <script src="script.js" type="module"></script>
     <script src="accordion.js"></script>
     <script src="./addItem.js" type="module"></script>
+    <script src="filterSize.js" type="module"></script>
   </body>
 </html>

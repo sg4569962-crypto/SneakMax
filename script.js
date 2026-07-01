@@ -10,17 +10,39 @@ const btn = document.querySelector(".btn-sneakers");
 const logout = document.querySelector(".btn-logout");
 const basket = document.querySelector(".count-basket");
 
+const range = document.querySelector(".range");
+const td2 = document.querySelector(".td2")
 
+
+range.addEventListener("input", () =>{
+    console.log(range.value)
+    td2.textContent = range.value
+    render('',range.value)
+})
 
 const log_container = document.querySelector(".log-container ")
 let count = 3;
 
-const render = async() =>{
-    const req = await fetch("https://5e6b53ef5266adea.mokky.dev/card");
-    const items = await req.json();
+const render = async(size, price) =>{
+    console.log(size)
+    const req = await fetch("https://11d61df3b5f6af23.mokky.dev/card");
+    let items = await req.json();
     // console.log(items);
 
-    cards.textContent = '';
+cards.textContent = '';
+
+    if(size && !price){
+        items = items.filter(el => el.size == size);
+        console.log(items)
+    }
+
+
+    if(price){
+        items = items.filter(el => el.price == price);
+        
+    }
+
+    
 
 
     items.slice(0, count).forEach(el => {
@@ -32,6 +54,7 @@ const render = async() =>{
         <img src="./img/sneakers.png">
         <p class="text-sneakers">${el.title}</p>
         <p class="price-sneakers">${el.price}</p>
+        <p class="size-sneakers">Размер: ${el.size}</p>
         <button class="add-btn">Добавить</button>
 
         `;
@@ -71,4 +94,4 @@ if(userId){
 
 
 
-
+export default render
