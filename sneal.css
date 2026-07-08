@@ -45,29 +45,24 @@
 }
 
 .header {
-  /* display: flex; */
-
   background-color: hsla(246, 33%, 39%, 1);
-  /* height: 528px; */
-  /* flex-direction: column; */
   padding: 20px 0;
 
-  /* padding: 0px 370px; */
+ 
 }
 
 .container {
   max-width: 1300px;
   display: flex;
   margin: 0 auto;
-  /* justify-content: space-between; */
-  /* overflow: hidden; */
+  
 }
 
 .header_wrapp {
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: space-around;
-
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
@@ -98,13 +93,19 @@
   border: 1px solid hsla(0, 85%, 63%, 1);
 }
 
-.btn-reg {
+.btn-reg, .btn-logout, .add-btn {
   background-color: hsla(0, 85%, 63%, 1);
   color: hsla(0, 0%, 100%, 1);
   border-radius: 4px;
   width: 81px;
   height: 20px;
   border: 1px solid hsla(0, 85%, 63%, 1);
+  cursor: pointer;
+  transition: transform .3s;
+}
+
+.btn-logout:hover{
+  transform: scale(1.2);
 }
 
 .section1 {
@@ -322,9 +323,46 @@
     flex-wrap: wrap;
 } */
 
+.card{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 280;
+  height: 280px;
+  margin: 20px;
+}
+
+.content-card{
+  position: absolute;
+  max-height: 30px;
+  inset: 0;
+  
+  overflow: hidden;
+  transition: max-height .6s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card:hover  .content-card{
+  max-height: 100%;
+  
+  
+  background-color: #00000057;
+  backdrop-filter: blur(6px);
+}
+
+.catalog-block{
+  padding: 50px 0px;
+}
+
+
+
 .cards {
   display: flex;
   flex-wrap: wrap;
+
   margin-top: 15px;
 }
 
@@ -366,13 +404,15 @@
 .about-us {
   background-color: hsla(246, 33%, 39%, 1);
   display: flex;
+  justify-content: space-around;
+  width: 100%;
 }
 .right-block-about {
   clip-path: polygon(20% 0, 100% 0, 80% 100%, 0% 100%);
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .left-block-about {
-  /* margin-left: 374px; */
+ 
   margin-top: 222px;
 }
 .title-about {
@@ -386,30 +426,35 @@
   font-weight: 400;
   font-size: 16px;
   color: hsla(0, 0%, 100%, 1);
-  /* margin-left: 374px; */
+ 
   text-align: center;
 }
 .img-cite {
   width: 147px;
   height: 20px;
   margin-top: 20px;
-  /* margin-left: 670px; */
+  
   margin-right: 53px;
 }
 .figure-about {
-  /* width: 550px;
-    height: 424px; */
+
   position: absolute;
   pointer-events: none;
 }
 
+.sneakers-for-you{
+  width: 100%;
+}
+
 .sneakers-catalog {
-  /* width: 1180px;
-height: 658px; */
+
   background-color: hsla(21, 100%, 97%, 1);
 
-  margin-bottom: 60px;
-  margin-top: 60px;
+  /* margin-bottom: 60px;
+  margin-top: 60px; */
+  margin: 60px 0px;
+  padding: 60px 0px;
+  
 }
 .title-sneakers {
   padding-top: 40px;
@@ -483,15 +528,22 @@ height: 658px; */
   height: 50px;
   background-color: hsla(21, 100%, 97%, 1);
   border: 1px solid hsla(219, 13%, 31%, 1);
+  transition: .5s;
+  cursor: pointer;
+}
+
+.btn-step:hover{
+  background-color: #000000ce;
+  color: #fff;
 }
 
 .team {
   background-color: hsla(246, 33%, 39%, 1);
-  /* width: 1,920px; */
-  /* height: 1,190px; */
+  
   padding: 60px 40px;
-  /* margin-top: 60px; */
+  
   position: relative;
+  width: 100%;
 }
 .team-title {
   color: hsla(0, 0%, 100%, 1);
@@ -538,8 +590,16 @@ height: 658px; */
   border-radius: 4px;
 }
 
+
+.block-faq{
+  margin: 60px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .accordion {
-  width: 800px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -596,8 +656,9 @@ height: 658px; */
 .contacts {
   background-color: hsla(169, 15%, 96%, 1);
   height: 618px;
-  margin-top: 60px;
+  margin: 60px 0px;
   display: flex;
+  padding: 60px;
 
   padding-top: 60px;
 }
